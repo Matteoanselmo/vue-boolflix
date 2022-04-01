@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="card text-white mb-3 mx-2 p-3 shadow-lg" style="width: 18rem;">
-            <img :src="country" class="card-img-top" :alt="film.title">
+            <img :src="country" class="card-img-top" :alt="film.name">
             <div class="card-body">
-                <h5 class="card-title">{{ film.title }}</h5>
-                <h6 class="card-title">{{ film.original_title }}</h6>
-                <p class="card-text">{{ film.original_language }}</p>
+                <h5 class="card-title">{{ film.nam }}</h5>
+                <h6 class="card-title">{{ film.original_name }}</h6>
+                <p class="card-text">{{ film.overview }}</p>
                 <a href="#" class="btn btn-primary">{{ film.vote_average }}</a>
             </div>
         </div>
@@ -44,7 +44,7 @@ export default {
 <style lang="scss"> 
     .card{
         background-color: #1E2D3B !important;
-        height: 400px !important;
+        // height: 400px !important;
     }
 
 </style>

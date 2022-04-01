@@ -56,7 +56,7 @@ export default {
     },
     getSerieInfo() {
         axios
-      .get('https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=scrubs')
+      .get('https://api.themoviedb.org/3/tv/top_rated?api_key=291efde9ec311b454fd9de73cb4e8f5c&language=en-US&page=1')
       .then((result) =>{
         this.mainSerieCards = result.data.results;
         console.log(this.mainSerieCards);

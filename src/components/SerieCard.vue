@@ -5,8 +5,8 @@
             <div class="card-body">
                 <h5 class="card-title">{{ serie.name }}</h5>
                 <h6 class="card-title">{{ serie.original_name }}</h6>
-                <p class="card-text">{{ serie.original_language }}</p>
-                <a href="#" class="btn btn-primary">{{ serie.vote_count }}</a>
+                <p class="card-text">{{ serie.overview }}</p>
+                <a href="#" class="btn btn-primary">{{ serie.vote_average }}</a>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@ export default {
 <style lang="scss"> 
     .card{
         background-color: #1E2D3B !important;
-        height: 400px !important;
+        // height: 400px !important;
     }
 
 </style>
