@@ -1,10 +1,14 @@
 <template>
+<div class="p-5">
+  <input type="text" class="farm-control m-5" placeholder="Inserisci film" v-model="filmToSearch">
+  <button class="btn btn-primary">Cerca</button>
   <div class="d-flex flex-wrap">
     <FilmCard
     :film="element"
-    v-for="(element, index) in mainCards" :key="index"
+    v-for="(element, index) in fileteredFilms" :key="index"
     />
   </div>
+</div>
 </template>
 
 <script>
@@ -17,7 +21,9 @@ export default {
   },
   data: function(){
     return{
-      mainCards: null
+      mainCards: null,
+      filmToSearch: '',
+      filmFilter: null,
     }
   },
   created: function(){
@@ -34,6 +40,17 @@ export default {
       .catch((error) => {
         console.error(error);
       })
+    }
+  },
+  computed: {
+      fileteredFilms(){
+        if ( this.filmToSearch.toLowerCase().trim() === ''){
+                console.warn('Stai cercando una stringa vuota');
+                return this.mainCards;
+            }
+        return this.mainCards.filter(
+                (element) => element.title.toLowerCase().includes(this.filmToSearch.toLowerCase().trim())
+      );
     }
   }
 }
