@@ -1,8 +1,7 @@
 <template>
-<div class="p-5">
-  <input type="text" class="farm-control m-5" placeholder="Inserisci film" v-model="filmToSearch">
-  <button class="btn btn-primary">Cerca</button>
-  <div class="d-flex flex-wrap">
+<div class="px-4 pb-4">
+  <input type="text" class="farm-control shadow-lg mb-4" placeholder="Cerca Film/Serie" v-model="filmToSearch">
+  <div class="d-flex flex-wrap" v-if="(filmToSearch != '')">
     <FilmCard
     :film="element"
     v-for="(element, index) in fileteredFilms" :key="index"
@@ -32,7 +31,7 @@ export default {
   methods: {
       getApiInfo() {
         axios
-      .get('https://api.themoviedb.org/3/movie/top_rated?api_key=291efde9ec311b454fd9de73cb4e8f5c&language=en-US&page=1')
+      .get('https://api.themoviedb.org/3/movie/top_rated?api_key=291efde9ec311b454fd9de73cb4e8f5c&language=en-US')
       .then((result) =>{
         this.mainCards = result.data.results;
         console.log(this.mainCards);

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1 class="text-danger text-uppercase m-4 shadow-lg" >boolflix</h1>
     <Main/>
   </div>
 </template>

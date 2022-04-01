@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="card" style="width: 18rem;">
+        <div class="card text-white mb-3 mx-2 p-3 shadow-lg" style="width: 18rem;">
             <img :src="''" class="card-img-top" :alt="film.title">
             <div class="card-body">
                 <h5 class="card-title">{{ film.title }}</h5>
@@ -19,6 +19,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss"> 
+    .card{
+        background-color: #1E2D3B !important;
+    }
 
 </style>
