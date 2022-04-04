@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    
+    <i class="fa-solid fa-star"></i>
     <Main/>
   </div>
 </template>

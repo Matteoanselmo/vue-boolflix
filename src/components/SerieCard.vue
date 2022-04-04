@@ -1,14 +1,13 @@
 <template>
     <div id="series-card">
-        <div class="card text-white mb-3 mx-2 p-3 shadow-lg" style="width: 18rem;">
-            <img :src="`https://image.tmdb.org/t/p/w500${serie.poster_path}`" class="card-img-top" :alt="serie.name">
-            <div class="card-body">
+        <div class="card text-white mx-2 p-3 shadow-lg" style="width: 18rem;">
+            <img :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" class="card-img-top d-block rounded" :alt="serie.name">
+            <div class="card-body my-card-wrapper d-none">
                 <h5 class="card-title">SERIE: {{ serie.name}}</h5>
-                <h6 class="card-title">{{ serie.original_name }}</h6>
-                <!-- <p class="card-text">{{ serie.overview }}</p> -->
-                <h6 class="card-title">{{ serie.original_language }}</h6>
+                <h6 class="card-title card-tex-overview">{{ serie.overview }}</h6>
+                <h6 class="card-title">Original lenguage: {{ serie.original_language }}</h6>
                 <a href="#" class="btn btn-primary">{{ serie.vote_average }}</a>
-            </div>
+            </div> 
         </div>
     </div>
 </template>
