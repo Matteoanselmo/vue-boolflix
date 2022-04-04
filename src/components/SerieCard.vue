@@ -1,11 +1,12 @@
 <template>
-    <div>
+    <div id="series-card">
         <div class="card text-white mb-3 mx-2 p-3 shadow-lg" style="width: 18rem;">
-            <img :src="country" class="card-img-top" :alt="serie.name">
+            <img :src="`https://image.tmdb.org/t/p/w500${serie.poster_path}`" class="card-img-top" :alt="serie.name">
             <div class="card-body">
-                <h5 class="card-title">{{ serie.name }}</h5>
+                <h5 class="card-title">SERIE: {{ serie.name}}</h5>
                 <h6 class="card-title">{{ serie.original_name }}</h6>
-                <p class="card-text">{{ serie.overview }}</p>
+                <!-- <p class="card-text">{{ serie.overview }}</p> -->
+                <h6 class="card-title">{{ serie.original_language }}</h6>
                 <a href="#" class="btn btn-primary">{{ serie.vote_average }}</a>
             </div>
         </div>
@@ -26,8 +27,8 @@ export default {
     },
     methods: {
         countryToSearch(){
-            if(this.serie.original_language == 'ja'){
-                this.country = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/280px-Flag_of_Japan.svg.png';
+            if(this.serie.original_language == 'zh'){
+                this.country = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Switzerland_canton_flag_zh.png';
             }else if (this.serie.original_language == 'en'){
                 this.country = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg/1200px-Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg.png';
             }else if (this.serie.original_language == 'hi'){
@@ -45,6 +46,10 @@ export default {
     .card{
         background-color: #1E2D3B !important;
         // height: 400px !important;
+        .card-text{
+            height: 200px;
+            overflow-y: scroll;
+        }
     }
 
 </style>

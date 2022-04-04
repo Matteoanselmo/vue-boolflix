@@ -2,6 +2,9 @@
 
 body{
     background-image: url('https://www.dolby.com/siteassets/xf-site/blocks/hero/netflix-gradient.png?width=1440');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
+}
+.card{
+    height: 100%;
 }
