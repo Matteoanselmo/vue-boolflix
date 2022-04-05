@@ -1,12 +1,14 @@
 <template>
-    <div id="series-card">
+    <div id="series-card" class="card-height">
         <div class="card text-white mx-2 p-3 shadow-lg" style="width: 18rem;">
-            <img :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" class="card-img-top d-block rounded" :alt="serie.name">
+            <img v-if="(serie.poster_path != 'null')" :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" class="card-img-top d-block rounded" :alt="serie.name">
+            <img v-else src="https://wallpaperaccess.com/full/2588810.jpg" alt="Cooming soon" class="card-img-top d-block rounded">
             <div class="card-body my-card-wrapper d-none">
-                <h5 class="card-title">SERIE: {{ serie.name}}</h5>
+                <h5 class="card-title">Titolo: {{ serie.name}}</h5>
+                <h5 class="card-title">Titolo originale: {{ serie.original_name}}</h5>
+                <a href="#" class="btn btn-primary my-3">{{ serie.vote_average }}</a>
                 <h6 class="card-title card-tex-overview">{{ serie.overview }}</h6>
                 <h6 class="card-title">Original lenguage: {{ serie.original_language }}</h6>
-                <a href="#" class="btn btn-primary">{{ serie.vote_average }}</a>
             </div> 
         </div>
     </div>

@@ -1,12 +1,14 @@
 <template>
-    <div>
+    <div class="card-height">
         <div class="card text-white mx-2 p-3 shadow-lg" style="width: 18rem;">
-            <img :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" class="card-img-top d-block rounded" :alt="film.name">
+            <img v-if="(film.poster_path != 'null')" :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`" class="card-img-top d-block rounded" :alt="film.name">
+            <img v-else src="https://wallpaperaccess.com/full/2588810.jpg" alt="Cooming soon" class="card-img-top d-block rounded">
             <div class="card-body d-none my-card-wrapper"  >
-                <h5 class="card-title">FILM: {{ film.title }}</h5>
+                <h5 class="card-title">Titolo: {{ film.title }}</h5>
+                <h5 class="card-title">Titolo originale: {{ film.original_title }}</h5>
+                <a href="#" class="btn btn-primary my-3">{{ film.vote_average }}</a>
                 <h6 class="card-title card-tex-overview">{{ film.overview }}</h6>
-                <h6 class="card-title">Original lenguage: {{ film.original_language }}</h6>
-                <a href="#" class="btn btn-primary">{{ film.vote_average }}</a>
+                <h6 class="card-title ">Lingua originale: {{ film.original_language }}</h6>
             </div> 
         </div>
     </div>
@@ -42,23 +44,5 @@ export default {
 </script>
 
 <style lang="scss" > 
-    // .card{
-    //     background-color: #1E2D3B !important;
-    //     cursor: pointer;
-    //     // height: 400px !important;
-    //     .card-tex-overview{
-    //         height: 200px;
-    //         overflow-y: auto;
-    //     }
-        
-    // }
-    // .card:hover  div.my-card-wrapper{
-    //     display: block !important;
-    //     animation-duration: 1s;
-    // }
-    // .card:hover .card-img-top{
-    //     display: none !important;
-    //     animation-duration: 1s;
-    // }
 
 </style>

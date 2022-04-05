@@ -8,21 +8,31 @@ body{
 .card{
     height: 100%;
 }
-.card{
-    background-color: #1E2D3B !important;
-    cursor: pointer;
-    // height: 400px !important;
-    .card-tex-overview{
-        height: 200px;
-        overflow-y: auto;
-    }
+.card-height{
+    height: 40rem;
     
-}
-.card:hover  div.my-card-wrapper{
-    display: block !important;
-    animation-duration: 1s;
-}
-.card:hover .card-img-top{
-    display: none !important;
-    animation-duration: 1s;
+    .card{
+        background-color: #1e2d3bd0 !important;
+        width: 25rem !important;
+        padding: 0 !important;
+        margin: 2px !important;
+        cursor: pointer;
+        // height: 400px !important;
+        img{
+            height: 100%;
+        }
+        .card-tex-overview{
+            height: 200px;
+            overflow-y: auto;
+        }
+        
+    }
+    .card:hover  div.my-card-wrapper{
+        display: block !important;
+        animation-duration: 1s;
+    }
+    .card:hover .card-img-top{
+        display: none !important;
+        animation-duration: 1s;
+    }
 }
